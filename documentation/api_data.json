@@ -658,6 +658,49 @@
   },
   {
     "group": "Category",
+    "name": "deleteAllCategory",
+    "type": "DELETE",
+    "url": "/v1/delete_all_category",
+    "title": "delete all category",
+    "description": "<p>Endpoint description here..</p>",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "admin"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>category id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"success\": \"Products Deleted successfully.\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 422 Unprocessable Entity\n  {\n    \"message\": \"The given data was invalid.\",\n    \"errors\": {\n    \"0.id\": [\n    \"The selected 0.id is invalid.\"\n    ],\n    \"1.id\": [\n    \"The selected 1.id is invalid.\"\n    ]\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Containers/Category/UI/API/Routes/DeleteAllCategory.v1.private.php",
+    "groupTitle": "Category"
+  },
+  {
+    "group": "Category",
     "name": "deleteCategory",
     "type": "DELETE",
     "url": "/v1/categories/:hashed_id",
@@ -872,6 +915,49 @@
       ]
     },
     "filename": "app/Containers/QuizletUrl/UI/API/Routes/CreateQuizletUrl.v1.private.php",
+    "groupTitle": "QuizletUrl"
+  },
+  {
+    "group": "QuizletUrl",
+    "name": "deleteAllQuizletUrl",
+    "type": "DELETE",
+    "url": "/v1/delete_all_quizlet_url",
+    "title": "delete all quizlet url",
+    "description": "<p>delete all quizlet url</p>",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "admin"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Quizlet id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n  {\n  \"success\": \"Products Deleted successfully.\"\n  }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 422 Unprocessable Entity\n{\n  \"message\": \"The given data was invalid.\",\n  \"errors\": {\n  \"0.id\": [\n  \"The selected 0.id is invalid.\"\n  ],\n  \"1.id\": [\n  \"The selected 1.id is invalid.\"\n]\n}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Containers/QuizletUrl/UI/API/Routes/DeleteAllQuizlet.v1.private.php",
     "groupTitle": "QuizletUrl"
   },
   {
@@ -1265,6 +1351,49 @@
       ]
     },
     "filename": "app/Containers/Words/UI/API/Routes/CreateWords.v1.private.php",
+    "groupTitle": "Words"
+  },
+  {
+    "group": "Words",
+    "name": "deleteAllWords",
+    "type": "DELETE",
+    "url": "/v1/delete_all_words",
+    "title": "delete all words",
+    "description": "<p>It will delete all check box words</p>",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "admin"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>id enter the word ID</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n  {\n  \"success\": \"Products Deleted successfully.\"\n  }",
+          "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 422 Unprocessable Entity\n  {\n    \"message\": \"The given data was invalid.\",\n    \"errors\": {\n    \"0.id\": [\n      \"The selected 0.id is invalid.\"\n    ],\n    \"1.id\": [\n      \"The selected 1.id is invalid.\"\n    ]\n    }\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Containers/Words/UI/API/Routes/DeleteAll.v1.private.php",
     "groupTitle": "Words"
   },
   {
