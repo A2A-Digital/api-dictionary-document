@@ -39,6 +39,44 @@ define({ "api": [
   },
   {
     "group": "AddFavorite",
+    "name": "createBatchAddFavorite",
+    "type": "POST",
+    "url": "/v1/add_batch_favorites",
+    "title": "CreateBatch",
+    "description": "<p>CreateBatch User add to favorite inform array</p>",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "students"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "word_id",
+            "description": "<p>reference word_id table(hashed_id)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"data\": [\n      {\n      \"object\": \"AddFavorite\",\n      \"id\": \"azkvml597yxe8b9j\",\n      \"word_id\": \"p8e9xqye60o6jbmw\",\n      \"user_id\": \"pvnxml0njyj6r3eg\",\n      \"created_at\": \"2021-01-18T03:25:05.000000Z\",\n      \"updated_at\": \"2021-01-18T03:25:05.000000Z\"\n      },\n      {\n      \"object\": \"AddFavorite\",\n      \"id\": \"6dpbgq5ka0axoe8r\",\n      \"word_id\": \"q3ajep56e08gorlx\",\n      \"user_id\": \"pvnxml0njyj6r3eg\",\n      \"created_at\": \"2021-01-18T03:25:05.000000Z\",\n      \"updated_at\": \"2021-01-18T03:25:05.000000Z\"\n      }\n    ],\n    \"meta\": {\n    \"include\": [],\n      \"custom\": []\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Containers/AddFavorite/UI/API/Routes/CreateBatchAddFavorite.v1.private.php",
+    "groupTitle": "AddFavorite"
+  },
+  {
+    "group": "AddFavorite",
     "name": "deleteAddFavorite",
     "type": "DELETE",
     "url": "/v1/add_favorites/user_hashed_id?searchFields=id:favorite_hashed_id",
@@ -73,6 +111,44 @@ define({ "api": [
       ]
     },
     "filename": "app/Containers/AddFavorite/UI/API/Routes/DeleteAddFavorite.v1.private.php",
+    "groupTitle": "AddFavorite"
+  },
+  {
+    "group": "AddFavorite",
+    "name": "deleteBatchAddFavorite",
+    "type": "DELETE",
+    "url": "/v1/delete_batch_add_favorites",
+    "title": "delete_batch_add_favorites",
+    "description": "<p>Array of word_id which existed in the word table</p>",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "students"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "arr_word_id",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n// Insert the response of the request here...\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Containers/AddFavorite/UI/API/Routes/DeleteBatchAddFavorite.v1.private.php",
     "groupTitle": "AddFavorite"
   },
   {
@@ -115,15 +191,60 @@ define({ "api": [
   },
   {
     "group": "AddFavorite",
+    "name": "upDataBatchFile",
+    "type": "put",
+    "url": "/v1/add_batch_favorites_data",
+    "title": "batch_update",
+    "description": "<p>BatchUpdate</p>",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "students"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "word_id",
+            "description": "<p>hashed_word_id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>hashed_id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\nreturn 1 when there have updated word else return 0\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Containers/AddFavorite/UI/API/Routes/UpdateBatchAddFavorite.v1.private.php",
+    "groupTitle": "AddFavorite"
+  },
+  {
+    "group": "AddFavorite",
     "name": "updateAddFavorite",
-    "type": "PATCH",
+    "type": "put",
     "url": "/v1/add_favorites/user_hashed_id?searchFields=id:favorite_hashed_id",
     "title": "update",
     "description": "<p>update</p>",
     "version": "1.0.0",
     "permission": [
       {
-        "name": "none"
+        "name": "students"
       }
     ],
     "parameter": {
@@ -1126,6 +1247,44 @@ define({ "api": [
     },
     "filename": "app/Containers/QuizletUrl/UI/API/Routes/UpdateQuizletUrl.v1.private.php",
     "groupTitle": "QuizletUrl"
+  },
+  {
+    "group": "SearchHistory",
+    "name": "createSearchBatchHistory",
+    "type": "POST",
+    "url": "/v1/create_search_batch_histories",
+    "title": "CreateBatchHistory",
+    "description": "<p>Data have to array format</p>",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "students"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "word_id",
+            "description": "<p>have to reference the words id from the word table(hashed_id)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n// Insert the response of the request here...\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Containers/SearchHistory/UI/API/Routes/CreateSearchBatchHistory.v1.private.php",
+    "groupTitle": "SearchHistory"
   },
   {
     "group": "SearchHistory",
